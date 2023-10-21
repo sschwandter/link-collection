@@ -3,9 +3,9 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["eslint:recommended", "prettier"],
+  extends: ["eslint:recommended", "plugin:node/recommended", "prettier"],
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: "2020",
     sourceType: "module",
   },
 };
