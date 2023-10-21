@@ -1,0 +1,6 @@
+name: link-collection
+services:
+  app:
+    image: sschwandter/link-collection
+    ports:
+      - 3000:3000
