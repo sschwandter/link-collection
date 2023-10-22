@@ -1,8 +1,8 @@
 import http from "http";
 import { getApi } from "./lib/getApi.js";
-import { InMemoryStore } from "./lib/store/InMemoryStore.js";
+import { createMongoDbStore } from "./lib/store/createMongoDbStore.js";
 
-const store = new InMemoryStore();
+const store = createMongoDbStore();
 await store.initialize();
 
 const api = getApi({ store });

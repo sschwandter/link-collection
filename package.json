@@ -9,7 +9,9 @@
     "dev": "nodemon app.js",
     "test": "vitest",
     "lint": "eslint .",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "start-mongodb": "docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=node -e MONGO_INITDB_ROOT_PASSWORD=node --name mongodb mongo:5.0.3",
+    "stop-mongodb": "docker rm -f -v mongodb"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +27,7 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "mongodb": "^6.2.0",
     "nodemon": "^3.0.1",
     "uuid": "^9.0.1"
   }
