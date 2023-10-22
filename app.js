@@ -1,8 +1,13 @@
 import http from "http";
 import { getApi } from "./lib/getApi.js";
-import { createMongoDbStore } from "./lib/store/createMongoDbStore.js";
+import { createStore } from "./lib/store/createStore.js";
+import dotenv from "dotenv";
 
-const store = createMongoDbStore();
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
+
+const store = createStore();
 await store.initialize();
 
 const api = getApi({ store });
